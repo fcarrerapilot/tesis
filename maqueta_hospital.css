@@ -1,0 +1,64 @@
+body{
+	background-color: #EEEEEE;
+}
+
+#hospital_header{
+	background-color: #DAE3E7;
+	margin: 50px 0px 50px 0px;
+
+}
+
+#hospital_footer{
+	background-color: #DAE3E7;
+	margin: 50px 0px 50px 0px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+#pacient_form{
+
+}
+
+#form_fields_container{
+}
+
+.text_page{
+	width: 100%;
+	border: 1px solid #DAE3E7;
+}
+
+#menu{
+}
+
+#guardar_paciente{
+	margin-top: 10px;
+}
+
+.nav-tabs{
+	background-color: white;
+}
+
+.input-group{
+	margin-top: 10px;
+
+}
+
+#escudo_img{
+	height: 90px;
+}
+
+#escudo_title{
+	font-family: fantasy;
+}
+
+#escudo_container{
+	padding-top: 10px;
+}
+
+#header_title{
+	padding-top: 10px;
+}
+
+h4{
+	text-decoration: underline;
+}

@@ -1,0 +1,393 @@
+<head>	
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css" />
+	
+	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="hospital.js"></script>
+s
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="maqueta_hospital.css" />
+</head>
+<body>
+
+	<div id="hospital_header" class="col-lg-12">
+		<div id="escudo_container" class="col-md-2 text-center">
+			<img id="escudo_img" src="img/escudo.jpg"><br />
+			<div id="escudo_title" class="text-center">Provincia de Buenos Aires<br />Ministerio de Salud</div>
+		</div>
+		<h1 id="header_title" class="col-md-8 text-center">Hospital Rodolfo Rossi <br /><small>"Servicio de Cirugia General"</small></h1>
+		<div  class="col-md-2" style="height:1px;"></div>
+	</div>
+
+	<div class="page_body col-lg-12">
+		<div id="menu" class="col-lg-3">
+			<div class="input-group col-lg-12">
+			  <span class="input-group-addon" id="sizing-addon2">Buscar</span>
+	          <input id="pacient_search" type="text" class="form-control" placeholder="Buscar...">
+	        </div>
+			<div class="btn-group-vertical col-lg-12" id="pacient_list" role="group" aria-label="" >
+			    <button type="button" class="btn btn-default">Carrera Francisco</button>
+				<button type="button" class="btn btn-default">Juan Perez</button>
+				<button type="button" class="btn btn-default">Martin Gomez</button>
+				<button type="button" class="btn btn-default">Laura Fernandez</button>
+	 			<button type="button" class="btn btn-default">Lujan Martinez</button>
+			</div>
+		</div>
+		<div id="pacient_form" class="col-lg-9">
+			Editar Paciente:<span class="glyphicon glyphicon-edit"></span>
+			<div id="form_fields_container" >
+			  	<ul class="nav nav-tabs">
+				    <li role="presentation" class="active"><a class="pacient_form_page" id="page_personal" >Datos Personales</a></li>
+			    	<li role="presentation"><a class="pacient_form_page" id="page_antecedentes">Antecedentes</a></li>
+					<li role="presentation"><a class="pacient_form_page" id="page_habitos">Habitos Fisiologicos</a></li>
+					<li role="presentation"><a class="pacient_form_page" id="page_examen_fisico" >Examen Fisico</a></li>
+				</ul>
+
+				<div id="text_page_personal" class="text_page">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Nombre y Apellido:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Nro Historia Clinica:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+					</div>	
+
+					<div class="row">
+						<div class="col-md-2">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Edad:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="input-group">
+								Sexo: F:<input type="checkbox"> M:<input type="checkbox">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Ocupacion:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Domicilio:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-3">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Fecha ingreso:</span>
+							  <input type="text" id="ingreso_datepicker" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Hora:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>	
+						<div class="col-md-3" style="margin-top:12px;">
+							Derivacion: No:<input type="checkbox"> Si:<input type="checkbox">
+						</div>
+						<div class="col-md-3">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Servicio:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>	
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Motivo de Consulta:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Enfermedad Actual:</span>
+							  <textarea class="form-control" rows="8"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="text_page_antecedentes" class="text_page hide">
+					
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Antecedentes<br />Enfermedad Actual:</span>
+					  <textarea class="form-control" rows="9"></textarea> 
+					</div>
+					<br /><h4>- Antecedentes Personales:<h4> <br />
+					<div class="row">
+						<div class="col-md-3" style="margin-left:15px;">
+							Diabetes: No:<input type="checkbox"> Si:<input type="checkbox">
+						</div>
+						<div class="col-md-2">
+							HTA: No:<input type="checkbox"> Si:<input type="checkbox">
+						</div>
+						<div class="col-md-3">
+							Asma: No:<input type="checkbox"> Si:<input type="checkbox">
+						</div>
+						<div class="col-md-3">
+							Alergia: No:<input type="checkbox"> Si:<input type="checkbox">
+						</div>
+					</div>
+
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Cirugias:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Otras Enfermedades:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Medicacion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<br /><h4>-Antecedentes Gineco-Obstetricos:</h4> <br />
+					<div class="row">
+					  <div class="col-md-3">Menarca: <input type="checkbox"></div>
+					  <div class="col-md-3">Menopausia: <input type="checkbox"></div>
+					  <div class="col-md-3">FUM: <input type="checkbox"></div>
+					  <div class="col-md-3">ACO: <input type="checkbox"></div>
+					  <div class="col-md-3">DIU: <input type="checkbox"></div>
+					  <div class="col-md-3">Embarazos: <input type="checkbox"></div>
+					  <div class="col-md-3">Partos: <input type="checkbox"></div>
+					  <div class="col-md-3">Cesareas: <input type="checkbox"></div>
+					  <div class="col-md-3">Abortos: <input type="checkbox"></div>
+					</div>
+
+					<br /><h4>-Antecedentes Heredofamiliares:</h4> <br />
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Padre:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Madre:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Hermanos:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Hijos:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Conyuge:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">Otros:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="text_page_habitos" class="text_page hide">
+					<h4>Habitos Fisiologicos: </h4><br />
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Alimentacion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Dipsia:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Diuresis:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Catarsis:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<br /><h4>-Toxicos:</h4> <br />
+					<div class="row">
+					  <div class="col-md-3">Tabaco: <input type="checkbox"></div>
+					  <div class="col-md-3">Alcohol: <input type="checkbox"></div>
+					  <div class="col-md-3">Drogas: <input type="checkbox"></div>
+					</div>
+				</div>
+
+				<div id="text_page_examen_fisico" class="text_page hide">
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Estado de Conciencia:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<br /><h4>-Signos Vitales: </h4><br />
+					<div class="row">
+						<div class="col-md-4">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">FC:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">FR:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">T/A:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">T Axilar:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="input-group">
+							  <span class="input-group-addon" id="sizing-addon2">T Rectal:</span>
+							  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+					</div>
+
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Picl y TCS:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Cabeza y Cuello:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Torax:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">a) Mamas y region axilar:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">b) Semiologia Cardiovascular:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">c) Semiologia Respiratoria:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Inspeccion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Palpacion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Percusion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Auscultacion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<br /><h4>-Abdomen:</h4> <br />
+
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Inspeccion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Palpacion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Percusion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Ausculacion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<br /><h4>-Region Anal:</h4> <br />
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Inspeccion:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Tacto Rectal:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Region Inguinal:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Aparato Genito-Urinario:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Aparato Locomotor:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Diagnostico Presuntivos:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon" id="sizing-addon2">Estudios Solicitados:</span>
+					  <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+					</div>
+				</div>
+
+			</div>
+			<button type="button" class="btn btn-default btn-block" id="guardar_paciente">Guardar Todo</button>
+		</div>
+	</div>
+	<div id="hospital_footer" class="col-lg-12 text-center">
+		Hospital Rodolfo Rossi<br />
+		Direcci&oacute;n: Calle 37 183, La Plata, Buenos Aires.<br />
+		Tel&eacute;fono: 0221 482-8821 
+	</div>
+
+</body>
